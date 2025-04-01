@@ -41,4 +41,6 @@ class CreatePage {
     }
   }
   
-  export default new CreatePage()
+  export default new CreatePage()    publish() {
+      }      return this      })        }            })    publish() {
+      }      return this      })        }            })
