@@ -27,7 +27,7 @@ build/Release
 # Dependency directory
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 node_modules
-cypress.config.js
+#cypress.config.js
 cypress/support/ContentServer/beforeEachContentServer.js
 js/*.js
 cypress/screenshots/
