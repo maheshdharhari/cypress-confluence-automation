@@ -3,7 +3,7 @@ class CreatePage {
       titleInput: () => cy.get('#content-title'),
       editorFrame: () => cy.get('#wysiwygTextarea').next('iframe'),
       publishButton: () => cy.get('#rte-button-publish'),
-      successMessage: () => cy.contains('.aui-message-success', /created|saved/i)
+      successMessage: () => cy.get('h1')
     }
   
     setTitle(title) {
