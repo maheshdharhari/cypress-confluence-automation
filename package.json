@@ -1,0 +1,18 @@
+{
+  "name": "confluence-automation",
+  "version": "1.0.0",
+  "description": "Cypress automation for Confluence page creation",
+  "scripts": {
+    "test": "cypress run",
+    "test:headed": "cypress open",
+    "test:ci": "cypress run --record --key your-cypress-key"
+  },
+  "dependencies": {
+    "cypress": "^12.17.0",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "eslint-plugin-cypress": "^2.14.0"
+  }
+}
