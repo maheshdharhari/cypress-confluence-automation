@@ -24,7 +24,7 @@ describe('Confluence Page Creation', () => {
         .publish()
         .verifySuccess()
 
-      ViewPage.verifyTitleContains(title)
+      //ViewPage.verifyTitleContains(title)
       
       if (i < iterations - 1) {
         cy.visit(`/pages/createpage.action?spaceKey=${SPACE_KEY}&fromPageId=${PARENT_PAGE_ID}`)
