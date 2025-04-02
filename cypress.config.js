@@ -12,11 +12,11 @@ module.exports = defineConfig({
     responseTimeout: 30000,
     video: false,
     env: {
-      iterations: 5,
-      delay_ms: 2000,
-      CONFLUENCE_URL: 'http://confluence:8612',
-      CONFLUENCE_USERNAME: 'admin',
-      CONFLUENCE_PASSWORD: 'admin',
-    }
+      iterations: 5, // Default number of pages to create
+      delay_ms: 2000, // Default delay between page creations in milliseconds
+      CONFLUENCE_URL: 'YOUR_CONFLUENCE_URL', // Base URL of Confluence instance
+      CONFLUENCE_USERNAME: 'YOUR_USER_NAME', // Login username
+      CONFLUENCE_PASSWORD: 'YOUR_PASSWORD', // Login password
+   },
   }
 })
