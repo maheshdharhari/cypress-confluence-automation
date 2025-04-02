@@ -43,7 +43,7 @@ export const PARENT_PAGE_ID = "YOUR_PARENT_PAGE_ID";
 ```
 ### Updating `cypress.config.js` for Environment Variables
 
-Modify the `cypress.config.js` file to include the following environment variable configuration:
+Modify the `cypress.config.js` file to update the following environment variable configuration:
 
 ```javascript
 const { defineConfig } = require('cypress');
@@ -56,9 +56,9 @@ module.exports = defineConfig({
       env: {
          iterations: 5, // Default number of pages to create
          delay_ms: 2000, // Default delay between page creations in milliseconds
-         CONFLUENCE_URL: 'YOUR_CONFLUENCE_URL', // Base URL of Confluence instance
-         CONFLUENCE_USERNAME: 'YOUR_USER_NAME', // Login username
-         CONFLUENCE_PASSWORD: 'YOUR_PASSWORD', // Login password
+         CONFLUENCE_URL: "YOUR_CONFLUENCE_URL", // Base URL of Confluence instance
+         CONFLUENCE_USERNAME: "YOUR_USER_NAME", // Login username
+         CONFLUENCE_PASSWORD: "YOUR_PASSWORD", // Login password
       },
    },
 });
