@@ -75,13 +75,6 @@ module.exports = defineConfig({
    npx cypress run
    ```
 
-3. For CI/CD integration, set environment variables:
-   ```bash
-   export CONFLUENCE_USERNAME=your_username
-   export CONFLUENCE_PASSWORD=your_password
-   npx cypress run
-   ```
-
 ## Environment Variables
 
 | Variable | Description | Required |
