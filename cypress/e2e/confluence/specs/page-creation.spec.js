@@ -48,7 +48,8 @@ describe('Confluence Page Creation', () => {
     const delay = Cypress.env('delay_ms') || 2000
 
     for (let i = 0; i < iterations; i++) {
-      const title = `Automated Page ${i+1}`
+      const title = `Automated Page ${Math.random().toString(36).substring(2, 10)}`;
+      
       const content = `This is automated content for page ${i+1}`
 
       cy.log(`Creating page ${i+1}/${iterations}`)
