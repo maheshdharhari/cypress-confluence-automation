@@ -12,11 +12,11 @@ module.exports = defineConfig({
     responseTimeout: 30000,
     video: false,
     env: {
-      iterations: process.env.ITERATIONS || 5,
-      delay_ms: process.env.DELAY_MS || 2000,
+      iterations: 5,
+      delay_ms: 2000,
       CONFLUENCE_URL: 'http://confluence:8612',
       CONFLUENCE_USERNAME: 'admin',
-      CONFLUENCE_PASSWORD: 'admin'
+      CONFLUENCE_PASSWORD: 'admin',
     }
   }
 })
