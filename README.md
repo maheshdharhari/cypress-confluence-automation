@@ -30,21 +30,39 @@ A Cypress automation script for bulk creating pages in Atlassian Confluence with
 
 2. Install dependencies:
    ```bash
-   npm install cypress --save-dev
+   npm install
    ```
 
 ## Configuration
 
-Edit the following in `cypress/e2e/confluence.spec.js`:
+Edit the following in `cypress/support/constants.js`:
 
 ```javascript
-const CONFLUENCE_URL = "http://your-confluence-instance:port";
-const SPACE_KEY = "YOUR_SPACE_KEY";
-const PARENT_PAGE_ID = "YOUR_PARENT_PAGE_ID";
-const ITERATIONS = 5; // Number of pages to create
-const DELAY_BETWEEN_PAGES = 2000; // ms between creations
+export const SPACE_KEY = "YOUR_SPACE_KEY";
+export const PARENT_PAGE_ID = "YOUR_PARENT_PAGE_ID";
 ```
+### Updating `cypress.config.js` for Environment Variables
 
+Modify the `cypress.config.js` file to include the following environment variable configuration:
+
+```javascript
+const { defineConfig } = require('cypress');
+
+module.exports = defineConfig({
+   e2e: {
+      setupNodeEvents(on, config) {
+         // implement node event listeners here
+      },
+      env: {
+         iterations: 5, // Default number of pages to create
+         delay_ms: 2000, // Default delay between page creations in milliseconds
+         CONFLUENCE_URL: 'YOUR_CONFLUENCE_URL', // Base URL of Confluence instance
+         CONFLUENCE_USERNAME: 'YOUR_USER_NAME', // Login username
+         CONFLUENCE_PASSWORD: 'YOUR_PASSWORD', // Login password
+      },
+   },
+});
+```
 ## Usage
 
 1. Run the tests in headed mode (to watch execution):
@@ -77,14 +95,25 @@ const DELAY_BETWEEN_PAGES = 2000; // ms between creations
 ## File Structure
 
 ```
-confluence-page-creator/
-├── cypress/
-│   ├── e2e/
-│   │   └── confluence.spec.js  # Main test file
-│   ├── fixtures/               # Test data
-│   └── support/                # Custom commands
-├── cypress.config.js           # Cypress configuration
-└── README.md                   # This file
+cypress/
+├── e2e/
+│   ├── confluence/
+│   │   ├── pages/
+│   │   │   ├── create.page.js         # Page object for creating Confluence pages
+│   │   │   └── view.page.js           # Page object for viewing Confluence pages
+│   │   ├── specs/
+│   │   │   └── page-creation.spec.js  # Main test file for Confluence automation
+│   ├── support/
+│   │   ├── commands.js                # Custom Cypress commands
+│   │   └── constants.js               # Constants used across tests
+├── fixtures/
+│   └── example.json                   # Example data for tests
+├── screenshots/                       # Stores screenshots on test failures
+├── cypress.config.js                  # Cypress configuration file
+├── package.json                       # Project dependencies and scripts
+├── package-lock.json                  # Dependency lock file
+├── README.md                          # Project documentation (this file)
+└── .gitignore                         # Files and directories to ignore in Git
 ```
 
 ## Troubleshooting
@@ -128,23 +157,3 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
-```
-
-## Key Features of This README:
-
-1. **Badges** - Visual indicators for versions
-2. **Clear Prerequisites** - Specifies exact requirements
-3. **Configuration Section** - Shows what to modify
-4. **Multiple Usage Options** - For different environments
-5. **Environment Variables** - Well-documented configuration
-6. **Troubleshooting Guide** - Helps with common issues
-7. **Clean File Structure** - Visual project layout
-8. **License Information** - Important for open source
-
-To use this:
-1. Copy this content to a file named `README.md` in your project root
-2. Replace placeholder values (your-username, your-confluence-instance, etc.)
-3. Customize any sections specific to your implementation
-4. Commit and push to GitHub
-
-Would you like me to add any additional sections or modify any part of this README?
