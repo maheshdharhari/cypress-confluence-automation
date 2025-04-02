@@ -36,4 +36,3 @@ cypress/downloads/
 .env
 .DS_Store
 cypress.config.js
-cypress.config.js
